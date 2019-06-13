@@ -9,7 +9,7 @@ fi
 
 if [[ ${DOCKER_TAG} =~ ^(.+)-elixir(.+)$ ]] ; then
     phoenix_ver="${BASH_REMATCH[1]}"
-    elixir_ver="${BASH_REMATCH[21]}"
+    elixir_ver="${BASH_REMATCH[2]}"
     docker build --build-arg PHOENIX_VER=${phoenix_ver} --build-arg ELIXIR_VER=${elixir_ver} ${DOCKERFILE_PATH_ARG} -t $IMAGE_NAME .
 else
     echo "No match."
